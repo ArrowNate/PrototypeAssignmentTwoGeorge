@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float health;
+    public float speed;
+    public float rotationSpeed;
+    public float jumpStrength;
+    public Rigidbody rb;
+
     public Transform bulletSpawnPoint;
     public GameObject bullet;
 
@@ -15,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     void Shooting()
     {
-        Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
+        Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 
     // Update is called once per frame
