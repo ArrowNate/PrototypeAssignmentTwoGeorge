@@ -11,13 +11,14 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bulletSpeed = 3000;
         rb.AddRelativeForce(Vector3.forward * bulletSpeed);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Hit");
-        if (collision.gameObject.layer == 0)
+        if (collision.gameObject.layer == 6)
         {
             Destroy(gameObject);
         }

@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 175998705}
   - component: {fileID: 175998704}
   - component: {fileID: 175998703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 515170197}
   - component: {fileID: 515170196}
   - component: {fileID: 515170195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,8 +1080,7 @@ GameObject:
   - component: {fileID: 561517776}
   - component: {fileID: 561517775}
   - component: {fileID: 561517774}
-  - component: {fileID: 561517773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,21 +1104,6 @@ Transform:
   m_Father: {fileID: 1590826978}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &561517773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561517771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08845d6807e6e3f42bf6e513aac2bd7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 1859070551}
-  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
-  bulletSpawn: {fileID: 0}
 --- !u!65 &561517774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1309,7 +1293,7 @@ GameObject:
   - component: {fileID: 612156815}
   - component: {fileID: 612156814}
   - component: {fileID: 612156817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1632,9 +1616,10 @@ GameObject:
   - component: {fileID: 728517433}
   - component: {fileID: 728517432}
   - component: {fileID: 728517431}
-  m_Layer: 0
+  - component: {fileID: 728517437}
+  m_Layer: 6
   m_Name: Enemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1652,12 +1637,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 4
-  rotationSpeed: 0.25
-  jumpStrength: 250
+  speed: 3
+  rotationSpeed: 0.3
+  jumpStrength: 300
+  playerInRange: 0
   rb: {fileID: 728517432}
-  bulletSpawnPoint: {fileID: 0}
-  bullet: {fileID: 0}
+  player: {fileID: 0}
+  bulletSpawnPoint: {fileID: 965124484}
+  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
 --- !u!54 &728517432
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1774,6 +1761,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: -219.8, z: 0}
+--- !u!65 &728517437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728517430}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 130, y: 5, z: 130}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &740642913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,8 +1794,7 @@ GameObject:
   - component: {fileID: 740642918}
   - component: {fileID: 740642917}
   - component: {fileID: 740642916}
-  - component: {fileID: 740642915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1811,21 +1818,6 @@ Transform:
   m_Father: {fileID: 728517436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &740642915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740642913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08845d6807e6e3f42bf6e513aac2bd7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 965124484}
-  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
-  bulletSpawn: {fileID: 0}
 --- !u!65 &740642916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2013,7 +2005,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2106,7 +2098,7 @@ GameObject:
   - component: {fileID: 965124487}
   - component: {fileID: 965124486}
   - component: {fileID: 965124485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2211,7 +2203,7 @@ GameObject:
   - component: {fileID: 1119118713}
   - component: {fileID: 1119118712}
   - component: {fileID: 1119118711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2421,8 +2413,7 @@ GameObject:
   - component: {fileID: 1250185448}
   - component: {fileID: 1250185447}
   - component: {fileID: 1250185446}
-  - component: {fileID: 1250185445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2446,21 +2437,6 @@ Transform:
   m_Father: {fileID: 1700367150}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1250185445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250185443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08845d6807e6e3f42bf6e513aac2bd7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 1776264378}
-  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
-  bulletSpawn: {fileID: 0}
 --- !u!65 &1250185446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2544,7 +2520,7 @@ GameObject:
   - component: {fileID: 1281217078}
   - component: {fileID: 1281217077}
   - component: {fileID: 1281217076}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2625,7 @@ GameObject:
   - component: {fileID: 1285863250}
   - component: {fileID: 1285863249}
   - component: {fileID: 1285863248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2861,9 +2837,10 @@ GameObject:
   - component: {fileID: 1590826975}
   - component: {fileID: 1590826974}
   - component: {fileID: 1590826973}
-  m_Layer: 0
+  - component: {fileID: 1590826979}
+  m_Layer: 6
   m_Name: Enemy (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2881,12 +2858,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 4
-  rotationSpeed: 0.25
-  jumpStrength: 250
+  speed: 3
+  rotationSpeed: 0.3
+  jumpStrength: 300
+  playerInRange: 0
   rb: {fileID: 1590826974}
-  bulletSpawnPoint: {fileID: 0}
-  bullet: {fileID: 0}
+  player: {fileID: 0}
+  bulletSpawnPoint: {fileID: 1859070551}
+  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
 --- !u!54 &1590826974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3003,6 +2982,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -156.57, z: 0}
+--- !u!65 &1590826979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590826972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 130, y: 5, z: 120}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1672319568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,9 +3017,10 @@ GameObject:
   - component: {fileID: 1672319571}
   - component: {fileID: 1672319570}
   - component: {fileID: 1672319569}
-  m_Layer: 0
+  - component: {fileID: 1672319575}
+  m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3037,12 +3038,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 4
-  rotationSpeed: 0.25
-  jumpStrength: 250
+  speed: 3
+  rotationSpeed: 0.3
+  jumpStrength: 300
+  playerInRange: 0
   rb: {fileID: 1672319570}
-  bulletSpawnPoint: {fileID: 0}
-  bullet: {fileID: 0}
+  player: {fileID: 0}
+  bulletSpawnPoint: {fileID: 2000881905}
+  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
 --- !u!54 &1672319570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3159,6 +3162,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -143.386, z: 0}
+--- !u!65 &1672319575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672319568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 130, y: 5, z: 170}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1700367144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,9 +3197,10 @@ GameObject:
   - component: {fileID: 1700367147}
   - component: {fileID: 1700367146}
   - component: {fileID: 1700367145}
-  m_Layer: 0
+  - component: {fileID: 1700367151}
+  m_Layer: 6
   m_Name: Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3193,12 +3218,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 4
-  rotationSpeed: 0.25
-  jumpStrength: 250
+  speed: 3
+  rotationSpeed: 0.3
+  jumpStrength: 300
+  playerInRange: 0
   rb: {fileID: 1700367146}
-  bulletSpawnPoint: {fileID: 0}
-  bullet: {fileID: 0}
+  player: {fileID: 0}
+  bulletSpawnPoint: {fileID: 1776264378}
+  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
 --- !u!54 &1700367146
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3315,6 +3342,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: -181.391, z: 0}
+--- !u!65 &1700367151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700367144}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 130, y: 5, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1776264377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,7 +3375,7 @@ GameObject:
   - component: {fileID: 1776264381}
   - component: {fileID: 1776264380}
   - component: {fileID: 1776264379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,7 +3480,7 @@ GameObject:
   - component: {fileID: 1859070554}
   - component: {fileID: 1859070553}
   - component: {fileID: 1859070552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3537,7 +3585,7 @@ GameObject:
   - component: {fileID: 1893380256}
   - component: {fileID: 1893380255}
   - component: {fileID: 1893380254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3747,8 +3795,7 @@ GameObject:
   - component: {fileID: 1994360817}
   - component: {fileID: 1994360816}
   - component: {fileID: 1994360815}
-  - component: {fileID: 1994360814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3772,21 +3819,6 @@ Transform:
   m_Father: {fileID: 1672319574}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1994360814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994360812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08845d6807e6e3f42bf6e513aac2bd7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 2000881905}
-  bullet: {fileID: 6401950447713966639, guid: db328cada4a94224b91929d658966f0d, type: 3}
-  bulletSpawn: {fileID: 0}
 --- !u!65 &1994360815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3870,7 +3902,7 @@ GameObject:
   - component: {fileID: 2000881908}
   - component: {fileID: 2000881907}
   - component: {fileID: 2000881906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4082,9 +4114,9 @@ GameObject:
   - component: {fileID: 2056746349}
   - component: {fileID: 2056746348}
   - component: {fileID: 2056746353}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4220,8 +4252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 250
   speed: 4
-  rotationSpeed: 0.25
-  jumpStrength: 250
+  rotationSpeed: 0.3
+  jumpStrength: 300
   rb: {fileID: 2056746348}
 --- !u!1 &2124264907
 GameObject:
