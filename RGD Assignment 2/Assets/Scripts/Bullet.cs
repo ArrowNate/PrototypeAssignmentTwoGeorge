@@ -12,12 +12,12 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         bulletSpeed = 3000;
+        bulletDamage = 10;
         rb.AddRelativeForce(Vector3.forward * bulletSpeed);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit");
         if (collision.gameObject.layer == 6)
         {
             Destroy(gameObject);
@@ -25,8 +25,18 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-/*            collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
-*/        }
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
+        }
+
+        if (collision.gameObject.layer == 3)
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Player>().PlayerTakeDamage(bulletDamage);
+        }
     }
 
     // Update is called once per frame

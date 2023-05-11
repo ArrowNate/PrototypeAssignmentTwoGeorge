@@ -54,6 +54,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float bulletDamage)
+    {
+        if (health <= 50)
+        {
+            health -= bulletDamage;
+        }
+
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

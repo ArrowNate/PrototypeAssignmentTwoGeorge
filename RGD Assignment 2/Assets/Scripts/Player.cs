@@ -16,6 +16,19 @@ public class Player : MonoBehaviour
         
     }
 
+    public void PlayerTakeDamage(float bulletDamage)
+    {
+        if (health <= 1000)
+        {
+            health -= bulletDamage;
+        }
+
+        if (health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
